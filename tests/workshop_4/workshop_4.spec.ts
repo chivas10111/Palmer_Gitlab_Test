@@ -1,5 +1,6 @@
 import { expect, test } from "playwright/test";
 
+// Xử lý alert
 test("Handling Alerts", async ({ page }) => {
   await page.goto(
     "file:///C:/Users/sang.nguyen/Documents/Thuc_tap_IDTEK/Palmer_Gitlab_Test/tests/workshop_4/index.html"
@@ -14,6 +15,7 @@ test("Handling Alerts", async ({ page }) => {
   expect(allertMessage).toBe("This is a simple alert."); // Kiểm tra xem thông điệp của alert có đúng là "This is a simple alert." hay không
 });
 
+// Xử lý Confirm Alert
 test("Confirm Alert", async ({ page }) => {
   await page.goto(
     "file:///C:/Users/sang.nguyen/Documents/Thuc_tap_IDTEK/Palmer_Gitlab_Test/tests/workshop_4/index.html"
@@ -28,6 +30,7 @@ test("Confirm Alert", async ({ page }) => {
   expect(allertMessage).toBe("You clicked Cancel."); // Kiểm tra xem thông điệp của alert có đúng là "You clicked Cancel." hay không
 });
 
+// Xử lý pop-up
 test("Handling pop-up", async ({ page }) => {
   await page.goto(
     "file:///C:/Users/sang.nguyen/Documents/Thuc_tap_IDTEK/Palmer_Gitlab_Test/tests/workshop_4/index.html"
