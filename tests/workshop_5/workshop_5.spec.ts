@@ -3,7 +3,7 @@ import { test, expect } from "playwright/test";
 // Xử lý mở tab mới
 test("Open new window and navigate back", async ({ context, page }) => {
   await page.goto(
-    "file:///C:/Users/pc/OneDrive/Documents/ThucTap_IDTEK/Palmer_Gitlab_Test/tests/workshop_5/index.html"
+    "file:///C:/Users/sang.nguyen/Documents/Thuc_tap_IDTEK/Palmer_Gitlab_Test/tests/workshop_5/index.html"
   );
   const pagePromise = context.waitForEvent("page"); // Tạo một promise để chờ cửa sổ mới xuất hiện
   await page.click("#openNewWindow");
@@ -17,13 +17,13 @@ test("Open new window and navigate back", async ({ context, page }) => {
 // Xử lý thêm cookie vào browser
 test("Add cookie", async ({ page }) => {
   await page.goto(
-    "file:///C:/Users/pc/OneDrive/Documents/ThucTap_IDTEK/Palmer_Gitlab_Test/tests/workshop_5/index.html"
+    "file:///C:/Users/sang.nguyen/Documents/Thuc_tap_IDTEK/Palmer_Gitlab_Test/tests/workshop_5/index.html"
   );
   await page.click("#setCookie");
   const cookies = await page
     .context()
     .cookies(
-      "file:///C:/Users/pc/OneDrive/Documents/ThucTap_IDTEK/Palmer_Gitlab_Test/tests/workshop_5/index.html"
+      "file:///C:/Users/sang.nguyen/Documents/Thuc_tap_IDTEK/Palmer_Gitlab_Test/tests/workshop_5/index.html"
     ); // Lấy tất cả các cookies từ trang hiện tại và lưu vào biến cookies
   const sessionCookie = cookies.find((cookies) => cookies.name === "session"); // Tìm cookie có name là session và lưu vào biến sessionCookie
   console.log("Session cookie", sessionCookie);
@@ -33,13 +33,13 @@ test("Add cookie", async ({ page }) => {
 // Xử lý xóa cookie
 test("Delete cookie", async ({ page }) => {
   await page.goto(
-    "file:///C:/Users/pc/OneDrive/Documents/ThucTap_IDTEK/Palmer_Gitlab_Test/tests/workshop_5/index.html"
+    "file:///C:/Users/sang.nguyen/Documents/Thuc_tap_IDTEK/Palmer_Gitlab_Test/tests/workshop_5/index.html"
   );
   await page.click("#setCookie");
   const cookies = await page
     .context()
     .cookies(
-      "file:///C:/Users/pc/OneDrive/Documents/ThucTap_IDTEK/Palmer_Gitlab_Test/tests/workshop_5/index.html"
+      "file:///C:/Users/sang.nguyen/Documents/Thuc_tap_IDTEK/Palmer_Gitlab_Test/tests/workshop_5/index.html"
     ); // Lấy tất cả các cookies từ trang hiện tại và lưu vào biến cookies
   const sessionCookie = cookies.find((cookies) => cookies.name === "session"); // Tìm cookie có name là session và lưu vào biến sessionCookie
   console.log("Session cookie", sessionCookie);
@@ -48,7 +48,7 @@ test("Delete cookie", async ({ page }) => {
   const deletedCookies = await page
     .context()
     .cookies(
-      "file:///C:/Users/pc/OneDrive/Documents/ThucTap_IDTEK/Palmer_Gitlab_Test/tests/workshop_5/index.html"
+      "file:///C:/Users/sang.nguyen/Documents/Thuc_tap_IDTEK/Palmer_Gitlab_Test/tests/workshop_5/index.html"
     );
   const deletedSessionCookie = deletedCookies.find(
     (cookies) => cookies.name === "session"
